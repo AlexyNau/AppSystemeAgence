@@ -3,9 +3,11 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Lob;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,6 +25,13 @@ public abstract class BienImmobilier implements Serializable{
 	
 	private double revenuCadastral;
 	private double remise;
+	@Lob
+	private byte[] photo;
+	
+	private String image;
+	
+	@Embedded
+	private Adresse adresse;
 	
 	public BienImmobilier() {
 		super();
@@ -37,8 +46,26 @@ public abstract class BienImmobilier implements Serializable{
 		this.revenuCadastral = revenuCadastral;
 		this.remise = remise;
 	}
+	
 
+	public BienImmobilier(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral,
+			double remise, Adresse adresse) {
+		super();
+		this.statut = statut;
+		this.datePublication = datePublication;
+		this.dateDisponibilite = dateDisponibilite;
+		this.revenuCadastral = revenuCadastral;
+		this.remise = remise;
+		this.adresse = adresse;
+	}
 
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
 	public String getStatut() {
 		return statut;
@@ -78,6 +105,22 @@ public abstract class BienImmobilier implements Serializable{
 
 	public void setRemise(double remise) {
 		this.remise = remise;
+	}
+
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 
