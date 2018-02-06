@@ -41,6 +41,21 @@ public class Vente extends BienImmobilier {
 		this.etat = etat;
 	}
 
+	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, int id, double prixAchat, String etat) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
+		this.id = id;
+		this.prixAchat = prixAchat;
+		this.etat = etat;
+	}
+
+	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, double prixAchat, String etat) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
+		this.prixAchat = prixAchat;
+		this.etat = etat;
+	}
+
 	// Getters et setters
 	public int getId() {
 		return id;
