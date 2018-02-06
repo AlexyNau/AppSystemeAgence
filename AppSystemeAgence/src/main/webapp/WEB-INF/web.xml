@@ -38,7 +38,7 @@
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
-
+<!-- qsegshg -->
 
 	<!-- Page d'accueil de l'application -->
 	<welcome-file-list>
