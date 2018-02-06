@@ -17,7 +17,7 @@ public class Visite implements Serializable {
 	//attribut date avec l'heure compris dedans
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_v")
+	@Column(name="id_visite")
 	private int id;
 	private Date date;
 	
