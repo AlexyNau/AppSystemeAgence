@@ -37,10 +37,31 @@ public class Location extends BienImmobilier implements Serializable{
 		this.bail = bail;
 		this.garniture = garniture;
 	}
+	
+	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, double caution, double loyer, double charges, int bail, boolean garniture) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
+		this.caution = caution;
+		this.loyer = loyer;
+		this.charges = charges;
+		this.bail = bail;
+		this.garniture = garniture;
+	}
 
 	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
 			int id, double caution, double loyer, double charges, int bail, boolean garniture) {
 		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
+		this.id = id;
+		this.caution = caution;
+		this.loyer = loyer;
+		this.charges = charges;
+		this.bail = bail;
+		this.garniture = garniture;
+	}
+
+	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, int id, double caution, double loyer, double charges, int bail, boolean garniture) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
 		this.id = id;
 		this.caution = caution;
 		this.loyer = loyer;
