@@ -33,6 +33,9 @@ public class Client implements Serializable {
 	@OneToMany(mappedBy="client",cascade=CascadeType.ALL)
 	private List<Visite> visites;
 	
+	@OneToMany(mappedBy="client", cascade=CascadeType.ALL)
+	private List<Contrat> contrats;
+	
 	
 	public Client() {
 		super();
@@ -96,6 +99,26 @@ public class Client implements Serializable {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
+
+	public List<Visite> getVisites() {
+		return visites;
+	}
+
+
+	public void setVisites(List<Visite> visites) {
+		this.visites = visites;
+	}
+
+
+	public List<Contrat> getContrats() {
+		return contrats;
+	}
+
+
+	public void setContrats(List<Contrat> contrats) {
+		this.contrats = contrats;
+	}
+
 
 	@Override
 	public String toString() {
