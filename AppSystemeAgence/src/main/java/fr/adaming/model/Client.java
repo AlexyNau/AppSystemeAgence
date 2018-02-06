@@ -31,6 +31,7 @@ public class Client {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
 	public Client(String nom, String telephone, String mail, String mdp) {
 		super();
 		this.nom = nom;
