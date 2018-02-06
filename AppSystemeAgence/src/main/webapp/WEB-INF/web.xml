@@ -2,4 +2,49 @@
 <web-app id="WebApp_ID" version="3.1"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+
+	<!-- Chargement du context Spring IoC -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/application-context.xml</param-value>
+	</context-param>
+
+	<!-- Déclaration de la servlet de jersey -->
+	<servlet>
+		<servlet-name>jerseyServlet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<!-- Specifier les packages où se trouve les classes annotées par @Path -->
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>fr.adaming.rest</param-value>
+		</init-param>
+
+		<!-- Autoriser la servlet Jax-rs à sérialiser les objets java en JSON -->
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+
+	</servlet>
+
+	<!-- Le mapping de la servlet -->
+	<servlet-mapping>
+		<servlet-name>jerseyServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- Page d'accueil de l'application -->
+	<welcome-file-list>
+		<welcome-file>accueil.html</welcome-file>
+	</welcome-file-list>
+
+
+
 </web-app>
