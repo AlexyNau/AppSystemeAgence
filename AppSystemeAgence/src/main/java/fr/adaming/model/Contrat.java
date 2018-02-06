@@ -1,6 +1,5 @@
 package fr.adaming.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,17 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="contrats")
-public class Contrat implements Serializable{
+@Table(name = "contrats")
+public class Contrat {
 
 	// Les attributs
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_contrat")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_contrat")
 	private int id;
 	private double prix;
 	private Date date;
-	private String type; // Location ou Vente
 
 	// Les constructeurs
 	public Contrat() {
@@ -29,19 +27,17 @@ public class Contrat implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Contrat(double prix, Date date, String type) {
+	public Contrat(double prix, Date date) {
 		super();
 		this.prix = prix;
 		this.date = date;
-		this.type = type;
 	}
 
-	public Contrat(int id, double prix, Date date, String type) {
+	public Contrat(int id, double prix, Date date) {
 		super();
 		this.id = id;
 		this.prix = prix;
 		this.date = date;
-		this.type = type;
 	}
 
 	// Getters et setters
@@ -69,18 +65,9 @@ public class Contrat implements Serializable{
 		this.date = date;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	// ToString
 	@Override
 	public String toString() {
-		return "Contrat [id=" + id + ", prix=" + prix + ", date=" + date + ", type=" + type + "]";
+		return "Contrat [id=" + id + ", prix=" + prix + ", date=" + date + "]";
 	}
-
 }
