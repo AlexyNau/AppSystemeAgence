@@ -31,7 +31,7 @@ public class Proprietaire implements Serializable{
 	@OneToMany(mappedBy="proprietaire",cascade=CascadeType.ALL)
 	private List<Vente> listeVentes;
 	
-	@OneToMany(mappedBy="proprietaire")
+	@OneToMany(mappedBy="proprietaire",cascade=CascadeType.ALL)
 	private List<Location> listeLocations;
 	
 
