@@ -33,12 +33,16 @@ public class Location extends BienImmobilier implements Serializable {
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_p", name = "proprietaire_id")
 	private Proprietaire proprietaire;
-	
-	@OneToMany(mappedBy="location",cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
 	private List<Visite> visites;
-	
-	@OneToOne(mappedBy="location")
+
+	@OneToOne(mappedBy = "location")
 	private Contrat contrat;
+
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id_classeStd", name = "classeStd_id")
+	private ClasseStd classeStd;
 
 	public Location() {
 		super();
@@ -132,6 +136,38 @@ public class Location extends BienImmobilier implements Serializable {
 
 	public void setGarniture(boolean garniture) {
 		this.garniture = garniture;
+	}
+
+	public Proprietaire getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Proprietaire proprietaire) {
+		this.proprietaire = proprietaire;
+	}
+
+	public List<Visite> getVisites() {
+		return visites;
+	}
+
+	public void setVisites(List<Visite> visites) {
+		this.visites = visites;
+	}
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
+	public ClasseStd getClasseStd() {
+		return classeStd;
+	}
+
+	public void setClasseStd(ClasseStd classeStd) {
+		this.classeStd = classeStd;
 	}
 
 	@Override

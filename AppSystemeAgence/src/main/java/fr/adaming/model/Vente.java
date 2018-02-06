@@ -36,6 +36,11 @@ public class Vente extends BienImmobilier {
 
 	@OneToOne(mappedBy = "vente")
 	private Contrat contrat;
+	
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id_classeStd", name = "classeStd_id")
+	private ClasseStd classeStd;
+
 
 	// Constructeurs
 	public Vente() {
@@ -95,6 +100,39 @@ public class Vente extends BienImmobilier {
 
 	public void setEtat(String etat) {
 		this.etat = etat;
+	}
+
+	
+	public Proprietaire getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Proprietaire proprietaire) {
+		this.proprietaire = proprietaire;
+	}
+
+	public List<Visite> getVisites() {
+		return visites;
+	}
+
+	public void setVisites(List<Visite> visites) {
+		this.visites = visites;
+	}
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
+	public ClasseStd getClasseStd() {
+		return classeStd;
+	}
+
+	public void setClasseStd(ClasseStd classeStd) {
+		this.classeStd = classeStd;
 	}
 
 	@Override
