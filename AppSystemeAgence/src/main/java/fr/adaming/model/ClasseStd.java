@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,6 +34,9 @@ public class ClasseStd implements Serializable {
 
 	@OneToMany(mappedBy = "classeStd", cascade = CascadeType.ALL)
 	private List<Location> locations;
+	
+	@ManyToMany(mappedBy="classesStd")
+	private List<Client> clients;
 
 	// Constructeur vide
 	public ClasseStd() {
@@ -122,6 +127,15 @@ public class ClasseStd implements Serializable {
 
 	public void setLocations(List<Location> locations) {
 		this.locations = locations;
+	}
+	
+
+	public List<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
 	}
 
 	// ToString
