@@ -1,5 +1,6 @@
 package fr.adaming.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public abstract class BienImmobilier {
+public abstract class BienImmobilier implements Serializable{
 	
 	private String statut;
 	
@@ -26,6 +27,18 @@ public abstract class BienImmobilier {
 	public BienImmobilier() {
 		super();
 	}
+
+	public BienImmobilier(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral,
+			double remise) {
+		super();
+		this.statut = statut;
+		this.datePublication = datePublication;
+		this.dateDisponibilite = dateDisponibilite;
+		this.revenuCadastral = revenuCadastral;
+		this.remise = remise;
+	}
+
+
 
 	public String getStatut() {
 		return statut;
