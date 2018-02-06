@@ -21,6 +21,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
 
 		<!-- =============II:Hibernate Librairie============= -->
 		<!-- II-Dependances de hibernate -->
@@ -117,7 +118,11 @@
 			<version>4.1.9.RELEASE</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.9.RELEASE</version>
+		</dependency>
 
 		<!--jackson-databind : Pour la serialisation des objets java en json -->
 		<dependency>

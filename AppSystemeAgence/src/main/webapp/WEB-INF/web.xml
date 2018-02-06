@@ -14,28 +14,22 @@
 		<param-value>/WEB-INF/application-context.xml</param-value>
 	</context-param>
 
-	<!-- Déclaration de la servlet de jersey -->
 	<servlet>
-		<servlet-name>jerseyServlet</servlet-name>
-		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-		<!-- Specifier les packages où se trouve les classes annotées par @Path -->
+		<servlet-name>DispatcherServ</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- Localisation du fichier de config du context spring mvc-->
 		<init-param>
-			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>fr.adaming.rest</param-value>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/mvc-context.xml</param-value>
 		</init-param>
-
-		<!-- Autoriser la servlet Jax-rs à sérialiser les objets java en JSON -->
-		<init-param>
-			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-			<param-value>true</param-value>
-		</init-param>
-
 	</servlet>
 
-	<!-- Le mapping de la servlet -->
+
+	
+	<!-- Le mapping de la servlet Jersey -->
 	<servlet-mapping>
-		<servlet-name>jerseyServlet</servlet-name>
-		<url-pattern>/*</url-pattern>
+			<servlet-name>DispatcherServ</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 
