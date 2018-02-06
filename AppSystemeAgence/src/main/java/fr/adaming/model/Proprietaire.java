@@ -110,6 +110,23 @@ public class Proprietaire implements Serializable{
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
+	
+
+	public List<Vente> getListeVentes() {
+		return listeVentes;
+	}
+
+	public void setListeVentes(List<Vente> listeVentes) {
+		this.listeVentes = listeVentes;
+	}
+
+	public List<Location> getListeLocations() {
+		return listeLocations;
+	}
+
+	public void setListeLocations(List<Location> listeLocations) {
+		this.listeLocations = listeLocations;
+	}
 
 	@Override
 	public String toString() {
