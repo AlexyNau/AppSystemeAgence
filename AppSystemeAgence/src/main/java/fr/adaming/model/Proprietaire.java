@@ -3,6 +3,7 @@ package fr.adaming.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ public class Proprietaire implements Serializable{
 	@Embedded
 	private Adresse adresse;
 	
-	@OneToMany(mappedBy="proprietaire")
+	@OneToMany(mappedBy="proprietaire",cascade=CascadeType.ALL)
 	private List<Vente> listeVentes;
 	
 	@OneToMany(mappedBy="proprietaire")
