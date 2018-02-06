@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,24 @@ public class Visite implements Serializable {
 	@Column(name="id_visite")
 	private int id;
 	private Date date;
+	
+	@ManyToOne
+	@JoinColumn(name="id_conseiller",referencedColumnName="id_conseiller")
+	private Conseiller conseiller;
+	
+	@ManyToOne
+	@JoinColumn(name="id_client",referencedColumnName="id_client")
+	private Client client;
+	
+	@ManyToOne
+	@JoinColumn(name="id_vente",referencedColumnName="id_vente")
+	private Vente vente;
+	
+	@ManyToOne
+	@JoinColumn(name="id_location",referencedColumnName="id_l")
+	private Location location;
+	
+	
 	
 	
 	//constructeur vide
@@ -55,6 +76,42 @@ public class Visite implements Serializable {
 	}
 	
 	
+	
+	
+	
+	
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public Vente getVente() {
+		return vente;
+	}
+
+	public void setVente(Vente vente) {
+		this.vente = vente;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	//Methode ToString
 	@Override
 	public String toString() {
