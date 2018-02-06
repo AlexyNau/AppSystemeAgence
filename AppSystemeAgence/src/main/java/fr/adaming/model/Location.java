@@ -8,22 +8,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="locations")
-public class Location extends BienImmobilier implements Serializable{
-	
+@Table(name = "locations")
+public class Location extends BienImmobilier implements Serializable {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_l")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_l")
 	private int id;
 	private double caution;
 	private double loyer;
 	private double charges;
 	private int bail;
 	private boolean garniture;
-	
+
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id_p", name = "proprietaire_id")
+	private Proprietaire proprietaire;
+
 	public Location() {
 		super();
 	}
@@ -37,7 +43,7 @@ public class Location extends BienImmobilier implements Serializable{
 		this.bail = bail;
 		this.garniture = garniture;
 	}
-	
+
 	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
 			Adresse adresse, double caution, double loyer, double charges, int bail, boolean garniture) {
 		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
@@ -123,6 +129,5 @@ public class Location extends BienImmobilier implements Serializable{
 		return "Location [id=" + id + ", caution=" + caution + ", loyer=" + loyer + ", charges=" + charges + ", bail="
 				+ bail + ", garniture=" + garniture + "]";
 	}
-
 
 }
