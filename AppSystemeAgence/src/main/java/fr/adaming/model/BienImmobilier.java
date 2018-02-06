@@ -28,6 +28,18 @@ public abstract class BienImmobilier implements Serializable{
 		super();
 	}
 
+	public BienImmobilier(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral,
+			double remise) {
+		super();
+		this.statut = statut;
+		this.datePublication = datePublication;
+		this.dateDisponibilite = dateDisponibilite;
+		this.revenuCadastral = revenuCadastral;
+		this.remise = remise;
+	}
+
+
+
 	public String getStatut() {
 		return statut;
 	}
