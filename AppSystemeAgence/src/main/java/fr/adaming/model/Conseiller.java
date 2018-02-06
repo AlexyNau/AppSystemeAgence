@@ -82,6 +82,14 @@ public class Conseiller implements Serializable{
 		this.mdp = mdp;
 	}
 
+	public List<Visite> getVisites() {
+		return visites;
+	}
+
+	public void setVisites(List<Visite> visites) {
+		this.visites = visites;
+	}
+
 	@Override
 	public String toString() {
 		return "Conseiller [id=" + id + ", nom=" + nom + ", mail=" + mail + ", mdp=" + mdp + "]";
