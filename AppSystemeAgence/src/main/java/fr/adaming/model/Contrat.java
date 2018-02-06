@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +23,15 @@ public class Contrat implements Serializable{
 	private int id;
 	private double prix;
 	private Date date;
+	
+	@OneToOne
+	@JoinColumn(referencedColumnName="id_l",name="location_id")
+	private Location location;
+	
+	@OneToOne
+	@JoinColumn(referencedColumnName="id_vente",name="vente_id")
+	private Vente vente;
+	
 
 	// Les constructeurs
 	public Contrat() {
