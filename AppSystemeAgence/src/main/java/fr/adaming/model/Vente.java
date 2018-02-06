@@ -16,7 +16,7 @@ public class Vente extends BienImmobilier {
 	// Les attributs
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_v")
+	@Column(name = "id_vente")
 	private int id;
 	private double prixAchat;
 	private String etat; // Soit : à restaurer, correct, impeccable
