@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,6 +32,10 @@ public class Contrat implements Serializable{
 	@OneToOne
 	@JoinColumn(referencedColumnName="id_vente",name="vente_id")
 	private Vente vente;
+	
+	@ManyToOne
+	@JoinColumn(name="client_id", referencedColumnName="id_client")
+	private Client client;
 	
 
 	// Les constructeurs
@@ -75,6 +80,30 @@ public class Contrat implements Serializable{
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Vente getVente() {
+		return vente;
+	}
+
+	public void setVente(Vente vente) {
+		this.vente = vente;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	// ToString
