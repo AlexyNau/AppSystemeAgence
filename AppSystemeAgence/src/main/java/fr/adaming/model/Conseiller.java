@@ -1,15 +1,15 @@
 package fr.adaming.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="conseillers")
-public class Conseiller {
+public class Conseiller implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -22,7 +22,6 @@ public class Conseiller {
 	
 	private String mdp;
 
-	
 	public Conseiller() {
 		super();
 		// TODO Auto-generated constructor stub

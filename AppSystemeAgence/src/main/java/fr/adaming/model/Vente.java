@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,10 @@ public class Vente extends BienImmobilier {
 	private int id;
 	private double prixAchat;
 	private String etat; // Soit : à restaurer, correct, impeccable
+	
+	@ManyToOne
+	@JoinColumn(referencedColumnName="id_p",name="proprietaire_id")
+	private Proprietaire proprietaire;
 
 	// Constructeurs
 	public Vente() {
@@ -37,6 +43,21 @@ public class Vente extends BienImmobilier {
 			int id, double prixAchat, String etat) {
 		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
 		this.id = id;
+		this.prixAchat = prixAchat;
+		this.etat = etat;
+	}
+
+	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, int id, double prixAchat, String etat) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
+		this.id = id;
+		this.prixAchat = prixAchat;
+		this.etat = etat;
+	}
+
+	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
+			Adresse adresse, double prixAchat, String etat) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
 		this.prixAchat = prixAchat;
 		this.etat = etat;
 	}
