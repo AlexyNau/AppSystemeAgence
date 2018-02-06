@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,6 +33,9 @@ public class Client implements Serializable {
 	private String mail;
 
 	private String mdp;
+	
+	@Embedded
+	private Adresse adresse;
 
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	private List<Visite> visites;
@@ -63,6 +67,25 @@ public class Client implements Serializable {
 		this.telephone = telephone;
 		this.mail = mail;
 		this.mdp = mdp;
+	}
+
+	public Client(int id, String nom, String telephone, String mail, String mdp, Adresse adresse) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.telephone = telephone;
+		this.mail = mail;
+		this.mdp = mdp;
+		this.adresse = adresse;
+	}
+
+	public Client(String nom, String telephone, String mail, String mdp, Adresse adresse) {
+		super();
+		this.nom = nom;
+		this.telephone = telephone;
+		this.mail = mail;
+		this.mdp = mdp;
+		this.adresse = adresse;
 	}
 
 	public int getId() {
