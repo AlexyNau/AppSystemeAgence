@@ -16,6 +16,17 @@ public class Adresse implements Serializable {
 	public Adresse() {
 		super();
 	}
+	
+	
+	public Adresse(String rue, int numero, String ville, String pays) {
+		super();
+		this.rue = rue;
+		this.numero = numero;
+		this.ville = ville;
+		this.pays = pays;
+	}
+
+
 
 
 	public String getRue() {
@@ -55,6 +66,12 @@ public class Adresse implements Serializable {
 
 	public void setPays(String pays) {
 		this.pays = pays;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Adresse [rue=" + rue + ", numero=" + numero + ", ville=" + ville + ", pays=" + pays + "]";
 	}
 	
 	
