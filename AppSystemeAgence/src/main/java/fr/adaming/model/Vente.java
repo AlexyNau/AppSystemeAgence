@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,13 +26,16 @@ public class Vente extends BienImmobilier {
 	private int id;
 	private double prixAchat;
 	private String etat; // Soit : à restaurer, correct, impeccable
-	
+
 	@ManyToOne
-	@JoinColumn(referencedColumnName="id_p",name="proprietaire_id")
+	@JoinColumn(referencedColumnName = "id_p", name = "proprietaire_id")
 	private Proprietaire proprietaire;
-	
-	@OneToMany(mappedBy="vente",cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "vente", cascade = CascadeType.ALL)
 	private List<Visite> visites;
+
+	@OneToOne(mappedBy = "vente")
+	private Contrat contrat;
 
 	// Constructeurs
 	public Vente() {
