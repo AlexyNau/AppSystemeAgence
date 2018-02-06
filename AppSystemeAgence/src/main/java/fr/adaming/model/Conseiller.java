@@ -7,40 +7,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Client {
+public class Conseiller {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_client")
+	@Column(name="id_conseiller")
 	private int id;
 	
 	private String nom;
-	
-	private String telephone;
 	
 	private String mail;
 	
 	private String mdp;
 
-	
-	public Client() {
+	public Conseiller() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Client(String nom, String telephone, String mail, String mdp) {
+	public Conseiller( String nom, String mail, String mdp) {
 		super();
 		this.nom = nom;
-		this.telephone = telephone;
 		this.mail = mail;
 		this.mdp = mdp;
 	}
 
-	public Client(int id, String nom, String telephone, String mail, String mdp) {
+	public Conseiller(int id, String nom, String mail, String mdp) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.telephone = telephone;
 		this.mail = mail;
 		this.mdp = mdp;
 	}
@@ -61,14 +56,6 @@ public class Client {
 		this.nom = nom;
 	}
 
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
 	public String getMail() {
 		return mail;
 	}
@@ -87,11 +74,8 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", telephone=" + telephone + ", mail=" + mail + ", mdp=" + mdp
-				+ "]";
+		return "Conseiller [id=" + id + ", nom=" + nom + ", mail=" + mail + ", mdp=" + mdp + "]";
 	}
-	
-	
 	
 	
 	
