@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "classes_std")
 public class ClasseStd implements Serializable {
@@ -29,12 +31,15 @@ public class ClasseStd implements Serializable {
 	private double prix_max;
 	private double sup_min;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "classeStd", cascade = CascadeType.ALL)
 	private List<Vente> ventes;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "classeStd", cascade = CascadeType.ALL)
 	private List<Location> locations;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy="classesStd")
 	private List<Client> clients;
 

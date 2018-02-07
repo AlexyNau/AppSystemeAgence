@@ -1,4 +1,4 @@
-//la configuration de la table de routage
+// La configuration de la table de routage
 
 monApp.config(function($routeProvider) {
 	
