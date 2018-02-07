@@ -5,12 +5,12 @@ monApp.controller("findAllCtrlProprio", function($scope, proprioService,$rootSco
 	// appel de la méthode du service pour recuperer la liste du web service
 	proprioService.findListeProprio(function(callback) {
 
-		// Stocker la liste récupéré dans la variable listePays du scope
+		// Stocker la liste récupéré dans la variable listeProprio du scope
 		$scope.listeProprio = callback;
 	});
 
 	// fonction pour modifier grace au lien du tableau
-	// initialiser l'objet  pays dans le rootScope
+	// initialiser l'objet  proprio dans le rootScope
 	$rootScope.proprioUpdate={
 			id:undefined,
 			nom : '',
@@ -25,7 +25,7 @@ monApp.controller("findAllCtrlProprio", function($scope, proprioService,$rootSco
 	}
 	//la fonction appelée a partir de la liste
 	$scope.modifierLien = function(proprio) {
-		//stocker les données du pays récupéré dans le rootScope
+		//stocker les données du proprio récupéré dans le rootScope
 		$rootScope.proprioUpdate=proprio;
 		//rediriger vers la vue modif
 $location.path("modifierProprio");
@@ -39,7 +39,7 @@ $location.path("modifierProprio");
 				// service
 				proprioService.findListeProprio(function(callbackList) {
 
-					// Stocker la liste récupéré dans la variable listePays du
+					// Stocker la liste récupéré dans la variable listeProprio du
 					// scope
 					$scope.listeProprio = callbackList;
 				});
@@ -51,7 +51,7 @@ $location.path("modifierProprio");
 		"findByIdCtrlProprio",
 		function($scope, proprioService,$rootScope,$location) {
 
-			// initialiser le pays du formulaire
+			// initialiser le proprio du formulaire
 			$scope.id = '';
 			$scope.indice = false;
 
@@ -77,7 +77,7 @@ $location.path("modifierProprio");
 			
 			// fonction pour modifier grace au lien du tableau
 			// initialiser l'objet  propriétaire dans le rootScope
-			$rootScope.paysUpdate={
+			$rootScope.proprioUpdate={
 					id:undefined,
 					nom : '',
 					numTelPrive : '',
@@ -141,7 +141,7 @@ $location.path("modifierProprio");
 }).controller("updateCtrlProprio", function($scope, proprioService, $location,$rootScope) {
 	
 	if($rootScope.proprioUpdate.id==undefined){
-		// initialiser le pays du formulaire à ajouter
+		// initialiser le proprio du formulaire à ajouter
 		$scope.proprioUpdate = {
 			id : '',
 			nom : '',
