@@ -48,33 +48,27 @@ public class Vente extends BienImmobilier {
 	}
 
 	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			double prixAchat, String etat) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
-		this.prixAchat = prixAchat;
-		this.etat = etat;
-	}
-
-	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			int id, double prixAchat, String etat) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
+			double superficie, byte[] photo, String image, Adresse adresse, int id, double prixAchat, String etat,
+			Proprietaire proprietaire, List<Visite> visites, Contrat contrat, ClasseStd classeStd) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, superficie, photo, image, adresse);
 		this.id = id;
 		this.prixAchat = prixAchat;
 		this.etat = etat;
+		this.proprietaire = proprietaire;
+		this.visites = visites;
+		this.contrat = contrat;
+		this.classeStd = classeStd;
 	}
 
-	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			Adresse adresse, int id, double prixAchat, String etat) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
-		this.id = id;
+	public Vente(double prixAchat, String etat, Proprietaire proprietaire, List<Visite> visites, Contrat contrat,
+			ClasseStd classeStd) {
+		super();
 		this.prixAchat = prixAchat;
 		this.etat = etat;
-	}
-
-	public Vente(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			Adresse adresse, double prixAchat, String etat) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
-		this.prixAchat = prixAchat;
-		this.etat = etat;
+		this.proprietaire = proprietaire;
+		this.visites = visites;
+		this.contrat = contrat;
+		this.classeStd = classeStd;
 	}
 
 	// Getters et setters

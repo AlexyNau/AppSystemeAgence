@@ -1,19 +1,19 @@
-package fr.adaming.dao;
+package fr.adaming.service;
 
 import java.util.List;
 
 import fr.adaming.model.ClasseStd;
 import fr.adaming.model.Location;
 
-public interface ILocationDao {
-
+public interface ILocationServiceImpl {
+	
 	public List<Location> getAllLocation();
 
 	public Location getLocationById(int idLoc);
 	
 	public Location updateLocation(Location loc);
 	
-	public Location addLocation(Location loc);
+	public Location addLocation(Location loc, String typeBien);
 	
 	public int deleteLocation(int idLoc);
 	
