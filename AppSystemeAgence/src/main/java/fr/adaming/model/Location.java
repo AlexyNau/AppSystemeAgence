@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "locations")
 public class Location extends BienImmobilier implements Serializable {
@@ -30,16 +32,20 @@ public class Location extends BienImmobilier implements Serializable {
 	private int bail;
 	private boolean garniture;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_p", name = "proprietaire_id")
 	private Proprietaire proprietaire;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
 	private List<Visite> visites;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "location")
 	private Contrat contrat;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_classeStd", name = "classeStd_id")
 	private ClasseStd classeStd;

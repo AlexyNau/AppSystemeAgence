@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "ventes")
 public class Vente extends BienImmobilier {
@@ -27,16 +29,20 @@ public class Vente extends BienImmobilier {
 	private double prixAchat;
 	private String etat; // Soit : à restaurer, correct, impeccable
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_p", name = "proprietaire_id")
 	private Proprietaire proprietaire;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "vente", cascade = CascadeType.ALL)
 	private List<Visite> visites;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "vente")
 	private Contrat contrat;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_classeStd", name = "classeStd_id")
 	private ClasseStd classeStd;
