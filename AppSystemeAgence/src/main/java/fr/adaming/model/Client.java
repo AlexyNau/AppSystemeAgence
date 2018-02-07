@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "clients")
 public class Client implements Serializable {
@@ -37,12 +39,15 @@ public class Client implements Serializable {
 	@Embedded
 	private Adresse adresse;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	private List<Visite> visites;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	private List<Contrat> contrats;
 
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "classes_clients", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "classe_id"))
 	private List<ClasseStd> classesStd = new ArrayList<ClasseStd>();
@@ -150,6 +155,15 @@ public class Client implements Serializable {
 
 	public void setClassesStd(List<ClasseStd> classesStd) {
 		this.classesStd = classesStd;
+	}
+	
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
 
 	@Override

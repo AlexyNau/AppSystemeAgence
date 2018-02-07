@@ -2,41 +2,73 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Accueil</title>
+<title>Mon App Page</title>
 
-<!-- Ajout de la lib JQuery -->
+<!-- ajout de la lib jquery -->
+
 <script type="text/javascript"
 	src="assets/resources/bootstrap/jquery-3.2.1.js"></script>
 
-<!-- Ajout des lib bootstrap -->
-<link rel="stylesheet" href="assets/resources/bootstrap/bootstrap.css"></link>
+<!-- ajout des libs de bootstrap -->
+<link rel="stylesheet" href="assets/resources/bootstrap/bootstrap.css">
 <script type="text/javascript"
 	src="assets/resources/bootstrap/bootstrap.js"></script>
 
-<!-- Ajout des lib angular -->
+<!-- ajout lib angular js -->
 <script type="text/javascript" src="assets/resources/angular/angular.js"></script>
 <script type="text/javascript"
 	src="assets/resources/angular/angular-route.js"></script>
 <script type="text/javascript"
+	src="assets/resources/angular/angular-base64-upload.js"></script>
+<script type="text/javascript"
+	src="assets/resources/angular/angular-locale_fr.js"></script>
+<script type="text/javascript"
 	src="assets/resources/angular/angular-cookies.js"></script>
 
-<!-- Ajout de mes fichiers -->
+<!-- ajout de mes fichiers -->
+<script type="text/javascript" src="assets/js/module/application.js"></script>
+<script type="text/javascript" src="assets/js/routing/root.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/ProprietaireProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/ProprietaireControllers.js"></script>
+
+
 <script type="text/javascript" src="assets/js/module/app.js"></script>
-<!-- <script type="text/javascript" src="assets/js/routing/root.js"></script>-->
 <script type="text/javascript"
 	src="assets/js/services/conseillierProvider.js"></script>
 <script type="text/javascript"
 	src="assets/js/controllers/ConseillerControllers.js"></script>
 <script type="text/javascript"
 	src="assets/js/controllers/HomeControllers.js"></script>
-</head>
-<body ng-app="BasicHttpAuthExample">
-	<h1 style="color: blue">Accueil</h1>
-	<br />
 
+</head>
+<body ng-app="monApp">
+
+	
+
+	<nav class="navbar navbar-inverse">
+		<ul class="nav nav-pills">
+			<li role="presentation"><a href="#!listeProprio">Accueil</a></li>
+			<li role="presentation"><a href="#!ajouterProprio">ajouter
+					Propriétaire</a></li>
+			<li role="presentation"><a href="#!modifierProprio">Modifier
+					Propriétaire</a></li>
+			<li role="presentation"><a href="#!supprimerProprio">Supprimer
+					Propriétaire</a></li>
+			<li role="presentation"><a href="#!rechercherProprio">Rechercher
+					Propriétaire</a></li>
+		</ul>
+	</nav>
 
 
 	<!-- Spécifier l'endroit de l'injection des vues -->
+	<div class="container">
+		<div ng-view></div>
+	</div>
+<div ng-app="BasicHttpAuthExample">
+
+<!-- Spécifier l'endroit de l'injection des vues -->
 	<div class="jumbotron">
 		<div class="container">
 			<div class="col-xs-offset-2 col-xs-8">
@@ -44,5 +76,8 @@
 			</div>
 		</div>
 	</div>
+
+
+</div>
 </body>
 </html>

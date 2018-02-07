@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="proprietaires")
 public class Proprietaire implements Serializable{
@@ -28,9 +30,11 @@ public class Proprietaire implements Serializable{
 	@Embedded
 	private Adresse adresse;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="proprietaire",cascade=CascadeType.ALL)
 	private List<Vente> listeVentes;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="proprietaire",cascade=CascadeType.ALL)
 	private List<Location> listeLocations;
 	
