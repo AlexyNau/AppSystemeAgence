@@ -6,5 +6,6 @@ angular.module('Home')
     ['$scope',
     function ($scope) {
     	
-
+    	$scope.indice = true;
+    	console.log("homecontroller"+$scope.indice);
     }]);

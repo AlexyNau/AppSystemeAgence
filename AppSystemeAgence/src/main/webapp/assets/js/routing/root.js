@@ -9,6 +9,15 @@ monApp.config(function($routeProvider) {
 	.when("/modifierProprio",{templateUrl:"views/modifProprio.html",controller:"updateCtrlProprio"})
 	.when("/rechercherProprio",{templateUrl:"views/rechercheProprio.html",controller:"findByIdCtrlProprio"})
 	.when("/coClient",{templateUrl:"views/login_client.html",controller:"ConnexionClientCtrl"})
+	 .when('/login', {
+            controller: 'LoginController',
+            templateUrl: 'views/login.html'
+        })
+
+        .when('/', {
+            controller: 'HomeController',
+            templateUrl: 'views/home.html'
+        })
 	.otherwise({
 		redirectTo:"/listeProprio"
 	})

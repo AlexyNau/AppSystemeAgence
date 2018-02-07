@@ -26,7 +26,8 @@
 	src="assets/resources/angular/angular-cookies.js"></script>
 
 <!-- ajout de mes fichiers -->
-<script type="text/javascript" src="assets/js/module/application.js"></script>
+<script type="text/javascript" src="assets/js/module/monApp.js"></script>
+<script type="text/javascript" src="assets/js/module/authModules.js"></script>
 <script type="text/javascript" src="assets/js/routing/root.js"></script>
 <script type="text/javascript"
 	src="assets/js/services/ProprietaireProvider.js"></script>
@@ -34,22 +35,22 @@
 	src="assets/js/controllers/ProprietaireControllers.js"></script>
 
 
-<script type="text/javascript" src="assets/js/module/app.js"></script>
+
 <script type="text/javascript"
-	src="assets/js/services/conseillierProvider.js"></script>
+	src="assets/js/services/conseillerProvider.js"></script>
 <script type="text/javascript"
 	src="assets/js/controllers/ConseillerControllers.js"></script>
 <script type="text/javascript"
 	src="assets/js/controllers/HomeControllers.js"></script>
-<script type="text/javascript"
-	src="assets/js/controllers/ClientControllers.js"></script>
-<script type="text/javascript"
-	src="assets/js/services/ClientProvider.js"></script>
+
+<!-- Style CSS pour le header conseiller-->
+<link href="assets/css/styleHeaderConseiller.css" rel="stylesheet" />
+
 
 </head>
 <body ng-app="monApp">
 
-	
+
 
 	<nav class="navbar navbar-inverse">
 		<ul class="nav nav-pills">
@@ -62,9 +63,12 @@
 					Propriétaire</a></li>
 			<li role="presentation"><a href="#!rechercherProprio">Rechercher
 					Propriétaire</a></li>
-			<li role="presentation"><a href="#!coClient">Connexion Client</a></li>
-			<li role="presentation"><a href="#!mapConseiller">Map Conseiller</a></li>
-					
+			<li role="presentation"><a href="#!coClient">Connexion
+					Client</a></li>
+			<li role="presentation"><a href="#!mapConseiller">Map
+					Conseiller</a></li>
+			<li role="presentation"><a href="#!login">Connexion Conseiller</a></li>
+
 		</ul>
 	</nav>
 
