@@ -86,6 +86,7 @@ public class VenteDaoImpl implements IVenteDao {
 		vOut.setRevenuCadastral(vente.getRevenuCadastral());
 		vOut.setStatut(vente.getStatut());
 		vOut.setVisites(vente.getVisites());
+		vOut.setSuperficie(vente.getSuperficie());
 
 		// modification de la vente dans la base de données
 		s.saveOrUpdate(vOut);

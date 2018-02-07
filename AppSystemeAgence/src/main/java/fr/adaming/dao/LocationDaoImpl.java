@@ -88,6 +88,7 @@ public class LocationDaoImpl implements ILocationDao {
 		lOut.setRevenuCadastral(loc.getRevenuCadastral());
 		lOut.setStatut(loc.getStatut());
 		lOut.setVisites(loc.getVisites());
+		lOut.setSuperficie(loc.getSuperficie());
 
 		// modification de la location dans la base de données
 		s.saveOrUpdate(lOut);
