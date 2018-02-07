@@ -71,7 +71,7 @@ public class VenteDaoImpl implements IVenteDao {
 		// récupération de la vente existante
 		Vente vOut = (Vente) s.get(Vente.class, vente.getId());
 
-		// stockage de la classe modifiée dans la classe préexistante
+		// stockage de la vente modifiée dans la vente préexistante
 		vOut.setAdresse(vente.getAdresse());
 		vOut.setClasseStd(vente.getClasseStd());
 		vOut.setContrat(vente.getContrat());
@@ -87,22 +87,28 @@ public class VenteDaoImpl implements IVenteDao {
 		vOut.setStatut(vente.getStatut());
 		vOut.setVisites(vente.getVisites());
 
-		// modification de la classe std dans la base de données
+		// modification de la vente dans la base de données
 		s.saveOrUpdate(vOut);
 
 		return vOut;
 	}
 
+	/**
+	 * méthode pour ajouter un bien à vendre
+	 */
 	@Override
 	public Vente addVente(Vente vente) {
 		// récupération de la session
 		s = sf.getCurrentSession();
 
-		// ajout du pays
+		// ajout de la vente
 		s.save(vente);
 		return vente;
 	}
 
+	/**
+	 * méthode pour supprimer un bien à vendre de la base de données
+	 */
 	@Override
 	public int deleteVente(int idVente) {
 		// récupération de la session
@@ -116,7 +122,7 @@ public class VenteDaoImpl implements IVenteDao {
 
 		// assignation des paramètres
 		query.setParameter("pId", idVente);
-		
+
 		return query.executeUpdate();
 	}
 
