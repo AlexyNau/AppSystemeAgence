@@ -42,7 +42,6 @@ public class Vente extends BienImmobilier {
 	@OneToOne(mappedBy = "vente")
 	private Contrat contrat;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id_classeStd", name = "classeStd_id")
 	private ClasseStd classeStd;
