@@ -1,6 +1,8 @@
 package fr.adaming.dao;
 
 import java.util.List;
+
+import fr.adaming.model.ClasseStd;
 import fr.adaming.model.Vente;
 
 public interface IVenteDao {
@@ -14,5 +16,7 @@ public interface IVenteDao {
 	public Vente addVente(Vente vente);
 	
 	public int deleteVente(int idVente);
+	
+	public List<Vente> getVentesByClasseStd(ClasseStd classe);
 
 }

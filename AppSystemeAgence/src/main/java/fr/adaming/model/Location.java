@@ -49,45 +49,36 @@ public class Location extends BienImmobilier implements Serializable {
 	}
 
 	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			double caution, double loyer, double charges, int bail, boolean garniture) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
-		this.caution = caution;
-		this.loyer = loyer;
-		this.charges = charges;
-		this.bail = bail;
-		this.garniture = garniture;
-	}
-
-	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			Adresse adresse, double caution, double loyer, double charges, int bail, boolean garniture) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
-		this.caution = caution;
-		this.loyer = loyer;
-		this.charges = charges;
-		this.bail = bail;
-		this.garniture = garniture;
-	}
-
-	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			int id, double caution, double loyer, double charges, int bail, boolean garniture) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise);
+			double superficie, byte[] photo, String image, Adresse adresse, int id, double caution, double loyer,
+			double charges, int bail, boolean garniture, Proprietaire proprietaire, List<Visite> visites,
+			Contrat contrat, ClasseStd classeStd) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, superficie, photo, image, adresse);
 		this.id = id;
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
 		this.bail = bail;
 		this.garniture = garniture;
+		this.proprietaire = proprietaire;
+		this.visites = visites;
+		this.contrat = contrat;
+		this.classeStd = classeStd;
 	}
 
 	public Location(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral, double remise,
-			Adresse adresse, int id, double caution, double loyer, double charges, int bail, boolean garniture) {
-		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, adresse);
-		this.id = id;
+			double superficie, byte[] photo, String image, Adresse adresse, double caution, double loyer,
+			double charges, int bail, boolean garniture, Proprietaire proprietaire, List<Visite> visites,
+			Contrat contrat, ClasseStd classeStd) {
+		super(statut, datePublication, dateDisponibilite, revenuCadastral, remise, superficie, photo, image, adresse);
 		this.caution = caution;
 		this.loyer = loyer;
 		this.charges = charges;
 		this.bail = bail;
 		this.garniture = garniture;
+		this.proprietaire = proprietaire;
+		this.visites = visites;
+		this.contrat = contrat;
+		this.classeStd = classeStd;
 	}
 
 	public int getId() {

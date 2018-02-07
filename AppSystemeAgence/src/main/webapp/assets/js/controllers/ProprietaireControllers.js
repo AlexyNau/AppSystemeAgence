@@ -15,7 +15,13 @@ monApp.controller("findAllCtrlProprio", function($scope, proprioService,$rootSco
 			id:undefined,
 			nom : '',
 			numTelPrive : '',
-			numTelTravail : ''
+			numTelTravail : '',
+			   adresse:    {
+				      rue: '',
+				      numero: '',
+				      ville: '',
+				      pays: ''
+				   }
 	}
 	//la fonction appelée a partir de la liste
 	$scope.modifierLien = function(proprio) {
@@ -75,7 +81,13 @@ $location.path("modifierProprio");
 					id:undefined,
 					nom : '',
 					numTelPrive : '',
-					numTelTravail : ''
+					numTelTravail : '',
+					   adresse:    {
+						      rue: '',
+						      numero: '',
+						      ville: '',
+						      pays: ''
+						   }
 			}
 			//la fonction appelée a partir de la liste
 			$scope.modifierLien = function(proprio) {
@@ -103,9 +115,15 @@ $location.path("modifierProprio");
 
 	// initialiser le propriétaire du formulaire à ajouter
 	$scope.proprioAjout = {
-		nom : '',
-		numTelPrive : '',
-		numTelTravail : ''
+			nom : '',
+			numTelPrive : '',
+			numTelTravail : '',
+			   adresse:    {
+				      rue: '',
+				      numero: '',
+				      ville: '',
+				      pays: ''
+				   }
 	}
 	// fonction pour soumettre le proprio a ajouter
 	$scope.ajouterProprio = function() {
@@ -128,8 +146,14 @@ $location.path("modifierProprio");
 			id : '',
 			nom : '',
 			numTelPrive : '',
-			numTelTravail : ''
-		};
+			numTelTravail : '',
+			   adresse:    {
+				      rue: '',
+				      numero: '',
+				      ville: '',
+				      pays: ''
+				   }
+	};
 		
 	}else{
 		

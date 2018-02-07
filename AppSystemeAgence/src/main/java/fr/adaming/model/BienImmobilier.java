@@ -25,6 +25,8 @@ public abstract class BienImmobilier implements Serializable{
 	
 	private double revenuCadastral;
 	private double remise;
+	private double superficie;
+	
 	@Lob
 	private byte[] photo;
 	
@@ -36,26 +38,18 @@ public abstract class BienImmobilier implements Serializable{
 	public BienImmobilier() {
 		super();
 	}
-
-	public BienImmobilier(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral,
-			double remise) {
-		super();
-		this.statut = statut;
-		this.datePublication = datePublication;
-		this.dateDisponibilite = dateDisponibilite;
-		this.revenuCadastral = revenuCadastral;
-		this.remise = remise;
-	}
 	
-
 	public BienImmobilier(String statut, Date datePublication, Date dateDisponibilite, double revenuCadastral,
-			double remise, Adresse adresse) {
+			double remise, double superficie, byte[] photo, String image, Adresse adresse) {
 		super();
 		this.statut = statut;
 		this.datePublication = datePublication;
 		this.dateDisponibilite = dateDisponibilite;
 		this.revenuCadastral = revenuCadastral;
 		this.remise = remise;
+		this.superficie = superficie;
+		this.photo = photo;
+		this.image = image;
 		this.adresse = adresse;
 	}
 
@@ -122,6 +116,15 @@ public abstract class BienImmobilier implements Serializable{
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+
+
+	public double getSuperficie() {
+		return superficie;
+	}
+
+
+	public void setSuperficie(double superficie) {
+		this.superficie = superficie;
+	}
 
 }
