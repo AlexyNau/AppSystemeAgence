@@ -62,23 +62,29 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public Client updateClient(Client c) {
 		Session s = sf.getCurrentSession();
-		// requete hql
-		String req = "update Client c set c.adresse.numero=:pAdNum,c.adresse.pays=:pAdPays,c.adresse.rue=:pAdRue,c.adresse.ville=:pAdVille,c.mail=:pMail,c.mdp=:pMdp,c.nom=:pNom,c.telephone=:pTel WHERE c.id=:pID";
+//		// requete hql
+//		String req = "update Client c set c.adresse.numero=:pAdNum,c.adresse.pays=:pAdPays,c.adresse.rue=:pAdRue,c.adresse.ville=:pAdVille,c.mail=:pMail,c.mdp=:pMdp,c.nom=:pNom,c.telephone=:pTel WHERE c.id=:pID";
+//
+//		Query query = s.createQuery(req);
+//
+//		query.setParameter("pAdNum", c.getAdresse().getNumero());
+//		query.setParameter("pAdPays", c.getAdresse().getPays());
+//		query.setParameter("pAdRue", c.getAdresse().getRue());
+//		query.setParameter("pAdVille", c.getAdresse().getVille());
+//		query.setParameter("pMail", c.getMail());
+//		query.setParameter("pMdp", c.getMdp());
+//		query.setParameter("pNom", c.getNom());
+//		query.setParameter("pTel", c.getTelephone());
+//		query.setParameter("pID", c.getId());
+//
+//		query.executeUpdate();
+//		return c;
 
-		Query query = s.createQuery(req);
+				
+				// Mettre a jour le client dans la BDD
+				s.saveOrUpdate(c);
 
-		query.setParameter("pAdNum", c.getAdresse().getNumero());
-		query.setParameter("pAdPays", c.getAdresse().getPays());
-		query.setParameter("pAdRue", c.getAdresse().getRue());
-		query.setParameter("pAdVille", c.getAdresse().getVille());
-		query.setParameter("pMail", c.getMail());
-		query.setParameter("pMdp", c.getMdp());
-		query.setParameter("pNom", c.getNom());
-		query.setParameter("pTel", c.getTelephone());
-		query.setParameter("pID", c.getId());
-
-		query.executeUpdate();
-		return c;
+				return c;
 
 	}
 
