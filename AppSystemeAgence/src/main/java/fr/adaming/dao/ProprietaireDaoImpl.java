@@ -38,7 +38,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 
 	@Override
 	public Proprietaire getProprioById(int id) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 		String req = "FROM Proprietaire p WHERE p.id=:pidp";
 
 		Query query = s.createQuery(req);
@@ -51,7 +51,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 
 	@Override
 	public Proprietaire addProprio(Proprietaire p) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 
 		s.save(p);
 		return p;
@@ -59,7 +59,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 
 	@Override
 	public Proprietaire updateProprio(Proprietaire p) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 		// requete hql
 		String req = "update Proprietaire p set p.adresse.numero=:pAdNum,p.adresse.pays=:pAdPays,p.adresse.rue=:pAdRue,p.adresse.ville=:pAdVille,p.nom=:pNom,p.numTelPrive=:pNumTelp,p.numTelTravail=:pNumTelt WHERE p.id=:pID";
 
@@ -82,7 +82,7 @@ public class ProprietaireDaoImpl implements IProprietaireDao {
 	@Override
 	public void deleteProprio(int id) {
 		// Récupération de la session
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 		// Récupération du pays correspondant à id de la BD
 		Proprietaire p_out = (Proprietaire) s.get(Proprietaire.class, id);
 		// Suppession du pays avec la methode delete

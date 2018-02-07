@@ -38,7 +38,7 @@ public class ClientDaoImpl implements IClientDao {
 
 	@Override
 	public Client getClientById(int id) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 		String req = "FROM Client c WHERE c.id=:pid";
 
 		Query query = s.createQuery(req);
@@ -51,7 +51,7 @@ public class ClientDaoImpl implements IClientDao {
 
 	@Override
 	public Client addClient(Client c) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 
 		s.save(c);
 		return c;
@@ -61,7 +61,7 @@ public class ClientDaoImpl implements IClientDao {
 
 	@Override
 	public Client updateClient(Client c) {
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 //		// requete hql
 //		String req = "update Client c set c.adresse.numero=:pAdNum,c.adresse.pays=:pAdPays,c.adresse.rue=:pAdRue,c.adresse.ville=:pAdVille,c.mail=:pMail,c.mdp=:pMdp,c.nom=:pNom,c.telephone=:pTel WHERE c.id=:pID";
 //
@@ -91,7 +91,7 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public void deleteClient(int id) {
 		// Récupération de la session
-		Session s = sf.getCurrentSession();
+		s = sf.getCurrentSession();
 		// Récupération du Client correspondant à id de la BD
 		Client c_out = (Client) s.get(Client.class, id);
 		// Suppession du Client avec la methode delete

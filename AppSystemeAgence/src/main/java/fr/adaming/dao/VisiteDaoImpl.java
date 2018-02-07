@@ -46,7 +46,7 @@ public class VisiteDaoImpl implements IVisiteDao {
 	public Visite addVisite(Visite visite) {
 
 		// Récupérer la session
-		Session s = sf.getCurrentSession();
+		 s = sf.getCurrentSession();
 
 		// Enregistrer le client dans la BDD
 		s.save(visite);
@@ -58,7 +58,7 @@ public class VisiteDaoImpl implements IVisiteDao {
 	public Visite updateVisite(Visite visite) {
 
 		// Récupérer la session
-		Session s = sf.getCurrentSession();
+		 s = sf.getCurrentSession();
 
 		// Mettre a jour le client dans la BDD
 		s.saveOrUpdate(visite);
@@ -70,7 +70,7 @@ public class VisiteDaoImpl implements IVisiteDao {
 	public List<Visite> getAllVisites() {
 
 		// Récupérer la session
-		Session s = sf.getCurrentSession();
+		 s = sf.getCurrentSession();
 
 		// Requete HQL
 		String req = "FROM Visite";
@@ -85,7 +85,7 @@ public class VisiteDaoImpl implements IVisiteDao {
 	public void deleteVisite(int id) {
 
 		// Récupération de la session
-				Session s = sf.getCurrentSession();
+				 s = sf.getCurrentSession();
 				// Récupération du Client correspondant à id de la BD
 				Visite v_out = (Visite) s.get(Visite.class, id);
 				// Suppession de la visite avec la methode delete

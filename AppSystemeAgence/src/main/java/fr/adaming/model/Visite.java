@@ -13,73 +13,74 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="visites")
+@Table(name = "visites")
 public class Visite implements Serializable {
 
-	//attribut date avec l'heure compris dedans
+	// attribut date avec l'heure compris dedans
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_visite")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_visite")
 	private int id;
 	private Date date;
-	
+
+	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name="id_conseiller",referencedColumnName="id_conseiller")
+	@JoinColumn(name = "id_conseiller", referencedColumnName = "id_conseiller")
 	private Conseiller conseiller;
-	
+
+	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name="id_client",referencedColumnName="id_client")
+	@JoinColumn(name = "id_client", referencedColumnName = "id_client")
 	private Client client;
-	
+
+	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name="id_vente",referencedColumnName="id_vente")
+	@JoinColumn(name = "id_vente", referencedColumnName = "id_vente")
 	private Vente vente;
-	
+
+	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name="id_location",referencedColumnName="id_l")
+	@JoinColumn(name = "id_location", referencedColumnName = "id_l")
 	private Location location;
-	
-	
-	
-	
-	//constructeur vide
+
+	// constructeur vide
 	public Visite() {
 		super();
 	}
-	
-	//constructeur sans id
+
+	// constructeur sans id
 	public Visite(Date date) {
 		super();
 		this.date = date;
 	}
-	
-	//constructeur avec id
+
+	// constructeur avec id
 	public Visite(int id, Date date) {
 		super();
 		this.id = id;
 		this.date = date;
 	}
-	
-	//Getters et Setters
+
+	// Getters et Setters
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Date getDate() {
 		return date;
 	}
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	
-	
-	
-	
-	
+
 	public Conseiller getConseiller() {
 		return conseiller;
 	}
@@ -112,12 +113,10 @@ public class Visite implements Serializable {
 		this.location = location;
 	}
 
-	//Methode ToString
+	// Methode ToString
 	@Override
 	public String toString() {
 		return "Visite [id=" + id + ", date=" + date + "]";
 	}
-	
-	
-	
+
 }
