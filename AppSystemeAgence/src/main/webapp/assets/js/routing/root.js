@@ -8,6 +8,7 @@ monApp.config(function($routeProvider) {
 	.when("/supprimerProprio",{templateUrl:"views/supprimeProprio.html",controller:"deleteCtrlProprio"})
 	.when("/modifierProprio",{templateUrl:"views/modifProprio.html",controller:"updateCtrlProprio"})
 	.when("/rechercherProprio",{templateUrl:"views/rechercheProprio.html",controller:"findByIdCtrlProprio"})
+	.when("/coClient",{templateUrl:"views/login_client.html",controller:"ConnexionClientCtrl"})
 	.otherwise({
 		redirectTo:"/listeProprio"
 	})
