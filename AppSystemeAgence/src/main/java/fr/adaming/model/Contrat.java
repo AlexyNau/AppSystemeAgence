@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "contrats")
 public class Contrat implements Serializable{
-
+	// Com
 	// Les attributs
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
