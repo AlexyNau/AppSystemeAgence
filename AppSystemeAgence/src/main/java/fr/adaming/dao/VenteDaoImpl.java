@@ -22,6 +22,7 @@ public class VenteDaoImpl implements IVenteDao {
 		this.sf = sf;
 	}
 
+	//
 	/**
 	 * méthode pour afficher toutes les ventes : servira dans l'accueil de
 	 * l'application
