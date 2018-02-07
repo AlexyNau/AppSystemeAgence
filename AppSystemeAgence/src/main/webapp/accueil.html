@@ -2,10 +2,47 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1 style="color:blue"> Accueil </h1>
+<title>Accueil</title>
 
+<!-- Ajout de la lib JQuery -->
+<script type="text/javascript"
+	src="assets/resources/bootstrap/jquery-3.2.1.js"></script>
+
+<!-- Ajout des lib bootstrap -->
+<link rel="stylesheet" href="assets/resources/bootstrap/bootstrap.css"></link>
+<script type="text/javascript"
+	src="assets/resources/bootstrap/bootstrap.js"></script>
+
+<!-- Ajout des lib angular -->
+<script type="text/javascript" src="assets/resources/angular/angular.js"></script>
+<script type="text/javascript"
+	src="assets/resources/angular/angular-route.js"></script>
+<script type="text/javascript"
+	src="assets/resources/angular/angular-cookies.js"></script>
+
+<!-- Ajout de mes fichiers -->
+<script type="text/javascript" src="assets/js/module/app.js"></script>
+<!-- <script type="text/javascript" src="assets/js/routing/root.js"></script>-->
+<script type="text/javascript"
+	src="assets/js/services/conseillierProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/ConseillerControllers.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/HomeControllers.js"></script>
+</head>
+<body ng-app="BasicHttpAuthExample">
+	<h1 style="color: blue">Accueil</h1>
+	<br />
+
+
+
+	<!-- Spécifier l'endroit de l'injection des vues -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="col-xs-offset-2 col-xs-8">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
