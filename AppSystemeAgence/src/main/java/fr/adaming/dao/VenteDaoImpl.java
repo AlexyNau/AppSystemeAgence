@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import fr.adaming.model.ClasseStd;
 import fr.adaming.model.Vente;
 
 @Repository
@@ -125,6 +126,24 @@ public class VenteDaoImpl implements IVenteDao {
 		query.setParameter("pId", idVente);
 
 		return query.executeUpdate();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Vente> getVentesByClasseStd(ClasseStd classe) {
+		// récupération de la session
+		s = sf.getCurrentSession();
+
+		// écriture de la requete HQL
+		String req = "from Vente v where v.classeStd.id=:pId";
+
+		// création d'un query
+		Query query = s.createQuery(req);
+
+		// assignation des paramètres
+		query.setParameter("pId", classe.getId());
+
+		return query.list();
 	}
 
 }
