@@ -33,25 +33,22 @@
 	src="assets/js/controllers/ConseillerControllers.js"></script>
 <script type="text/javascript"
 	src="assets/js/controllers/HomeControllers.js"></script>
+	
+	<!-- Style CSS pour le header -->
+	<link href="assets/css/styleHeaderConseiller.css" rel="stylesheet"/>
 
+<!-- Script pour l'ajout du template header -->
+<script>
+    $(function () {
+        $("#headnav").load("assets/templates/headerConseiller.html");
+    });
+</script>
 </head>
 <body ng-app="BasicHttpAuthExample">
 
+<!-- Header nav-bar -->
+<div id="headnav"></div>
 
-
-<!-- 	<nav class="navbar navbar-inverse"> -->
-<!-- 		<ul class="nav nav-pills"> -->
-<!-- 			<li role="presentation"><a href="#!listeProprio">Accueil</a></li> -->
-<!-- 			<li role="presentation"><a href="#!ajouterProprio">ajouter -->
-<!-- 					Propriétaire</a></li> -->
-<!-- 			<li role="presentation"><a href="#!modifierProprio">Modifier -->
-<!-- 					Propriétaire</a></li> -->
-<!-- 			<li role="presentation"><a href="#!supprimerProprio">Supprimer -->
-<!-- 					Propriétaire</a></li> -->
-<!-- 			<li role="presentation"><a href="#!rechercherProprio">Rechercher -->
-<!-- 					Propriétaire</a></li> -->
-<!-- 		</ul> -->
-<!-- 	</nav> -->
 
 
 
