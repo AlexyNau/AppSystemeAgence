@@ -35,9 +35,9 @@
 
 
 	<!-- Page d'accueil de l'application -->
-	<welcome-file-list>
+  	<welcome-file-list>
 		<welcome-file>accueil.html</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> 
 
 
 

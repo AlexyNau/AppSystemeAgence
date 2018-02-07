@@ -1,3 +1,4 @@
 //creation de mon module principal
 
-var monApp=angular.module("monApp",['ngRoute']);
+var monApp=angular.module("monApp",['ngRoute','ngRoute',
+    'ngCookies']);

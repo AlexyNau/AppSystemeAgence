@@ -20,13 +20,6 @@ angular.module('Authentication')
             }, 1000);
 
 
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-
         };
 
         service.SetCredentials = function (username, password) {
